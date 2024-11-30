@@ -1,4 +1,8 @@
 module.exports = {
   preset: 'react-native',
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFiles: [
+    './jest.setup.js',
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+  ],
+  setupFilesAfterEnv: ['./jest-after-env.setup.js'],
 };

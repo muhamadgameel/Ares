@@ -2,12 +2,13 @@ import React from 'react';
 import { Button } from 'react-native';
 import { useStyles, createStyleSheet } from 'react-native-unistyles';
 import { AppThemeManager } from './src/styling/app-theming';
-import { View, Text, Icon } from './src/rntk/components';
+import { View, Text, Icon, Container } from './src/rntk/components';
 import { Icons } from './src/rntk/assets';
 
 const stylesheet = createStyleSheet(theme => ({
   container: {
-    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   box: {
     backgroundColor: theme.colors.secondary,
@@ -23,7 +24,7 @@ function App(): React.JSX.Element {
   const { styles, theme } = useStyles(stylesheet);
 
   return (
-    <View center style={styles.container}>
+    <Container style={styles.container}>
       <View style={styles.box}>
         <View center style={styles.spacing}>
           <Text variant="h3">This is some text</Text>
@@ -128,7 +129,7 @@ function App(): React.JSX.Element {
           }}
         />
       </View>
-    </View>
+    </Container>
   );
 }
 

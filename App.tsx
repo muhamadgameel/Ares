@@ -1,32 +1,21 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Button } from 'react-native';
 import { useStyles, createStyleSheet } from 'react-native-unistyles';
 import { AppThemeManager } from './src/styling/app-theming';
-import { Icon } from './src/rntk/components';
+import { View, Text, Icon } from './src/rntk/components';
 import { Icons } from './src/rntk/assets';
 
 const stylesheet = createStyleSheet(theme => ({
   container: {
-    borderColor: 'red',
-    borderWidth: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
     flex: 1,
   },
   box: {
     backgroundColor: theme.colors.secondary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 48,
+    padding: 36,
+    marginBottom: 16,
   },
-  text: {
-    color: theme.colors.primaryText,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 8,
+  spacing: {
+    marginBottom: 16,
   },
 }));
 
@@ -34,36 +23,64 @@ function App(): React.JSX.Element {
   const { styles, theme } = useStyles(stylesheet);
 
   return (
-    <View style={styles.container}>
+    <View center style={styles.container}>
       <View style={styles.box}>
-        <Text style={styles.text}>This is some text</Text>
-        <View style={styles.row}>
+        <View center style={styles.spacing}>
+          <Text variant="h3">This is some text</Text>
+          <Text variant="h2" value="This is some text" />
+          <Text variant="h1" value="This is some text" />
+          <Text variant="subhead" value="This is some text" />
+          <Text variant="body" value="This is some text" />
+          <Text variant="caption" value="This is some text" />
+          <Text variant="footnote" value="This is some text" />
+          <View style={{ alignSelf: 'stretch' }}>
+            <Text
+              align="left"
+              fontWeight="bold"
+              variant="body"
+              value="This is some text"
+            />
+            <Text
+              align="center"
+              fontWeight="bold"
+              variant="body"
+              value="This is some text"
+            />
+            <Text
+              align="right"
+              fontWeight="bold"
+              variant="body"
+              value="This is some text"
+            />
+          </View>
+        </View>
+        <View row center>
           <Icon source={Icons.navigation.arrowHeadUp} />
           <Icon source={Icons.navigation.arrowHeadDown} />
           <Icon source={Icons.navigation.arrowHeadLeft} />
           <Icon source={Icons.navigation.arrowHeadRight} />
         </View>
 
-        <View style={styles.row}>
+        <View row center>
           <Icon source={Icons.navigation.arrowUp} />
           <Icon source={Icons.navigation.arrowDown} />
           <Icon source={Icons.navigation.arrowLeft} />
           <Icon source={Icons.navigation.arrowRight} />
         </View>
 
-        <View style={styles.row}>
+        <View row center>
           <Icon source={Icons.navigation.arrowSkipForward} />
           <Icon source={Icons.navigation.arrowSkipBackward} />
         </View>
 
-        <View style={styles.row}>
+        <View row center>
           <Icon size="sm" source={Icons.navigation.arrowSkipForward} />
           <Icon size="md" source={Icons.navigation.arrowSkipForward} />
           <Icon size="lg" source={Icons.navigation.arrowSkipForward} />
           <Icon size="xl" source={Icons.navigation.arrowSkipForward} />
         </View>
 
-        <View style={styles.row}>
+        <View row center>
           <Icon size="lg" source={Icons.interface.check} />
           <Icon size="lg" source={Icons.interface.checkAll} />
           <Icon
@@ -78,7 +95,7 @@ function App(): React.JSX.Element {
             color={theme.colors.negativeText}
           />
         </View>
-        <View style={styles.row}>
+        <View row center>
           <Icon source={Icons.interface.minus} />
           <Icon source={Icons.interface.minusCircle} />
           <Icon source={Icons.interface.add} />
@@ -91,25 +108,22 @@ function App(): React.JSX.Element {
           <Icon source={Icons.interface.zoomOut} />
         </View>
       </View>
-      <View style={styles.row}>
+      <View row center>
         <Button
           title="Light Theme"
           onPress={() => {
-            console.log('light');
             AppThemeManager.setTheme('light');
           }}
         />
         <Button
           title="Dark Theme"
           onPress={() => {
-            console.log('dark');
             AppThemeManager.setTheme('dark');
           }}
         />
         <Button
           title="Custom Theme"
           onPress={() => {
-            console.log('custom');
             AppThemeManager.setTheme('custom');
           }}
         />

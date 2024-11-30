@@ -1,4 +1,3 @@
-// import { beforeEach, expect, it } from '@jest/globals';
 import { UnistylesRegistry, UnistylesRuntime } from 'react-native-unistyles';
 import ThemeManager from './theme-manager';
 import lightTheme from './themes/light';

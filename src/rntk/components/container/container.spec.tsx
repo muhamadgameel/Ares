@@ -6,7 +6,7 @@ import Container from './container.component';
 
 jest.mock('react-native-unistyles', () => ({
   createStyleSheet: jest.fn().mockReturnValue({}),
-  useStyles: () => ({
+  useStyles: jest.fn().mockReturnValue({
     styles: {
       safeArea: {
         flex: 1,

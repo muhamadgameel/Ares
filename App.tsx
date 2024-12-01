@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button } from 'react-native';
 import { useStyles, createStyleSheet } from 'react-native-unistyles';
 import { AppThemeManager } from './src/styling/app-theming';
-import { View, Text, Icon, Container } from './src/rntk/components';
+import { View, Text, Icon, Container, Button } from './src/rntk/components';
 import { Icons } from './src/rntk/assets';
 
 const stylesheet = createStyleSheet(theme => ({
@@ -109,24 +108,24 @@ function App(): React.JSX.Element {
           <Icon source={Icons.interface.zoomOut} />
         </View>
       </View>
-      <View row center>
+      <View center row style={{ gap: 12, paddingHorizontal: 12 }}>
         <Button
-          title="Light Theme"
+          leftIcon={{ source: Icons.interface.addCircle }}
+          rightIcon={{ source: Icons.interface.minusCircle }}
+          title={{ value: 'Light Theme' }}
           onPress={() => {
             AppThemeManager.setTheme('light');
           }}
+          style={{ flex: 1 }}
         />
         <Button
-          title="Dark Theme"
+          leftIcon={{ source: Icons.interface.moreHorizontalCircle }}
+          title={{ value: 'Dark Theme' }}
           onPress={() => {
             AppThemeManager.setTheme('dark');
           }}
-        />
-        <Button
-          title="Custom Theme"
-          onPress={() => {
-            AppThemeManager.setTheme('custom');
-          }}
+          style={{ flex: 1 }}
+          variant="secondary"
         />
       </View>
     </Container>

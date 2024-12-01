@@ -5,7 +5,7 @@ import View from './view.component';
 // Mock the unistyles hook
 jest.mock('react-native-unistyles', () => ({
   createStyleSheet: jest.fn().mockReturnValue({}),
-  useStyles: jest.fn().mockImplementation((stylesheet, props) => ({
+  useStyles: jest.fn().mockImplementation((_, props) => ({
     styles: {
       root: {
         ...(props.row && { flexDirection: 'row' }),

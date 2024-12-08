@@ -8,5 +8,6 @@ export const stylesheet = createStyleSheet(theme => ({
   root: {
     backgroundColor: theme.colors.rootViewBackgroundColor,
     flex: 1,
+    alignItems: 'stretch',
   },
 }));

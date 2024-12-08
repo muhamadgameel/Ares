@@ -1,4 +1,6 @@
 import { UnistylesRegistry, UnistylesRuntime } from 'react-native-unistyles';
+import type { UnistylesConfig } from 'react-native-unistyles/lib/typescript/src/types';
+import { storage } from '../stores/storage';
 import darkTheme from './themes/dark';
 import lightTheme from './themes/light';
 import { Theme } from './themes/themes.types';
@@ -44,13 +46,21 @@ export class ThemeManager<T extends AdditionalThemes> {
       return;
     }
 
-    const userHasSetTheme = false;
+    const savedThemeFromStorage = storage.getString('savedThemeName');
+    const config: UnistylesConfig = {};
+
+    if (savedThemeFromStorage) {
+      config.adaptiveThemes = false;
+      config.initialTheme = savedThemeFromStorage;
+    } else {
+      config.adaptiveThemes = true;
+    }
 
     UnistylesRegistry.addThemes({
       light: lightTheme,
       dark: darkTheme,
       ...themes,
-    }).addConfig({ adaptiveThemes: !userHasSetTheme });
+    }).addConfig(config);
 
     this.initialized = true;
   }
@@ -61,6 +71,8 @@ export class ThemeManager<T extends AdditionalThemes> {
     UnistylesRuntime.setRootViewBackgroundColor(
       (UnistylesRuntime.getTheme() as Theme).colors.rootViewBackgroundColor,
     );
+    UnistylesRuntime.setAdaptiveThemes(false);
+    storage.set('savedThemeName', theme as string);
   }
 
   public getCurrentThemeName(): keyof CombinedThemes<T> {

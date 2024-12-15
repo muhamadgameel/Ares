@@ -5,27 +5,13 @@ export const stylesheet = createStyleSheet(theme => ({
     color: theme.colors.primaryText,
     variants: {
       variant: {
-        h3: {
-          fontSize: theme.typography.h3,
-        },
-        h2: {
-          fontSize: theme.typography.h2,
-        },
-        h1: {
-          fontSize: theme.typography.h1,
-        },
-        subhead: {
-          fontSize: theme.typography.subhead,
-        },
-        body: {
-          fontSize: theme.typography.body,
-        },
-        caption: {
-          fontSize: theme.typography.caption,
-        },
-        footnote: {
-          fontSize: theme.typography.footnote,
-        },
+        h3: theme.typography.h3,
+        h2: theme.typography.h2,
+        h1: theme.typography.h1,
+        subhead: theme.typography.subhead,
+        body: theme.typography.body,
+        caption: theme.typography.caption,
+        footnote: theme.typography.footnote,
       },
       align: {
         left: {

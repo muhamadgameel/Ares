@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
-import { IconProps } from './icon.types';
 import { stylesheet } from './icon.styles';
+import { IconProps } from './icon.types';
 
 const Icon = ({
   source,

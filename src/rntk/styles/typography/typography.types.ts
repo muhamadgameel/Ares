@@ -1,11 +1,15 @@
-type TypographyValue = number;
+type TypographyObject = {
+  fontSize: number;
+  lineHeight: number;
+  letterSpacing: number;
+};
 
 export type ThemeTypography = {
-  h3: TypographyValue;
-  h2: TypographyValue;
-  h1: TypographyValue;
-  subhead: TypographyValue;
-  body: TypographyValue;
-  caption: TypographyValue;
-  footnote: TypographyValue;
+  h3: TypographyObject;
+  h2: TypographyObject;
+  h1: TypographyObject;
+  subhead: TypographyObject;
+  body: TypographyObject;
+  caption: TypographyObject;
+  footnote: TypographyObject;
 };

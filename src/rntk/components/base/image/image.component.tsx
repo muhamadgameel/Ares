@@ -7,12 +7,18 @@ import { ImageProps } from './image.types';
 const Image = ({
   resizeMode = 'cover',
   style,
+  testID,
   ...rest
 }: ImageProps): React.JSX.Element => {
   const { styles } = useStyles(stylesheet);
 
   return (
-    <RNImage style={[styles.root, style]} resizeMode={resizeMode} {...rest} />
+    <RNImage
+      style={[styles.root, style]}
+      resizeMode={resizeMode}
+      testID={testID}
+      {...rest}
+    />
   );
 };
 

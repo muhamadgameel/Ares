@@ -1,6 +1,5 @@
 type TypographyObject = {
   fontSize: number;
-  lineHeight: number;
   letterSpacing: number;
 };
 

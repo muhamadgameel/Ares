@@ -4,8 +4,8 @@ import type {
   TouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
-import type { TextProps } from '../text/text.types';
-import type { IconProps } from '../icon/icon.types';
+import type { IconProps } from '../../base/icon/icon.types';
+import type { TextProps } from '../../base/text/text.types';
 
 type ButtonVariants = 'primary' | 'secondary' | 'danger' | 'inline';
 

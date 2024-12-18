@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
-import { Text, Icon } from '../../components';
-import { stylesheet, iconColorsMapping } from './button.styles';
+import { Icon } from '../../base/icon';
+import { Text } from '../../base/text';
+import { iconColorsMapping, stylesheet } from './button.styles';
 import type { ButtonProps } from './button.types';
 
 const Button = ({

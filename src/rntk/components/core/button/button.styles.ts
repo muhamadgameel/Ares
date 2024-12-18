@@ -1,6 +1,6 @@
 import { createStyleSheet } from 'react-native-unistyles';
 import type { ButtonVariants } from './button.types';
-import type { ThemeColors } from '../../styles/colors/colors.types';
+import type { ThemeColors } from '../../../styles/colors/colors.types';
 
 export const stylesheet = createStyleSheet(theme => ({
   root: {

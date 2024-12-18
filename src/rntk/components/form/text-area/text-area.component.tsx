@@ -15,7 +15,7 @@ const TextArea = ({
   error,
   hideErrorField,
 }: TextAreaProps): React.JSX.Element => {
-  const { styles } = useStyles(stylesheet);
+  const { styles, theme } = useStyles(stylesheet);
 
   return (
     <FormInputField error={error} hideErrorField={hideErrorField} style={style}>
@@ -26,6 +26,7 @@ const TextArea = ({
         onFocus={onFocus}
         value={value}
         placeholder={placeholder}
+        placeholderTextColor={theme.colors.secondaryText}
         multiline
       />
     </FormInputField>

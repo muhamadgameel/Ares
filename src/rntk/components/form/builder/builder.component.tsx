@@ -4,7 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import { z } from 'zod';
-import Button from '../../button';
+import { Button } from '../../core/button';
 import { CheckBox } from '../checkbox';
 import { CheckBoxGroup } from '../checkbox-group';
 import { CommonFormInputFieldProps } from '../form-input-field/form-input-field.types';

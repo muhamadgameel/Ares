@@ -15,7 +15,7 @@ const TextInput = ({
   error,
   hideErrorField,
 }: TextInputProps): React.JSX.Element => {
-  const { styles } = useStyles(stylesheet);
+  const { styles, theme } = useStyles(stylesheet);
 
   return (
     <FormInputField error={error} hideErrorField={hideErrorField} style={style}>
@@ -26,6 +26,7 @@ const TextInput = ({
         onFocus={onFocus}
         value={value}
         placeholder={placeholder}
+        placeholderTextColor={theme.colors.secondaryText}
       />
     </FormInputField>
   );

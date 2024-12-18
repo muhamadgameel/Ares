@@ -10,4 +10,7 @@ export const stylesheet = createStyleSheet(theme => ({
     flex: 1,
     alignItems: 'stretch',
   },
+  padding: {
+    paddingHorizontal: theme.spacing.lg,
+  },
 }));
